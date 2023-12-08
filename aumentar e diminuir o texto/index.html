@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>aumentar e diminuir o texto</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="bts">
+            <button onclick="FontSize('increase')"> + </button>
+            <button onclick="FontSize('decrease')"> - </button>
+        </div>
+        <div class="texto">
+            <h1 id="h1">Teste</h1>
+            <div class="increase">
+                <p id="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam ante, congue et convallis a,
+                    finibus ut
+                    quam. Suspendisse id erat libero. Donec tincidunt interdum velit, ut aliquam metus suscipit in. Vivamus
+                    et suscipit neque. Proin eget hendrerit lectus, non volutpat magna. Pellentesque in ex imperdiet, semper
+                    erat in, molestie erat. Vestibulum varius imperdiet odio, vitae volutpat erat. Vivamus quis efficitur
+                    nunc. Aliquam a laoreet ipsum, sed luctus quam. Mauris a odio non velit consectetur posuere.</p>
+                <p id="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In diam ante, congue et convallis a,
+                    finibus ut
+                    quam. Suspendisse id erat libero. Donec tincidunt interdum velit, ut aliquam metus suscipit in. Vivamus
+                    et suscipit neque. Proin eget hendrerit lectus, non volutpat magna. Pellentesque in ex imperdiet, semper
+                    erat in, molestie erat. Vestibulum varius imperdiet odio, vitae volutpat erat. Vivamus quis efficitur
+                    nunc. Aliquam a laoreet ipsum, sed luctus quam. Mauris a odio non velit consectetur posuere.</p>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <script>
+        function FontSize(type) {
+            var ids = ["#h1", ".increase"];
+            ids.forEach(id => {
+                var elemento = document.querySelector(id);
+                var style = window.getComputedStyle(elemento);
+                var size = parseFloat(style.getPropertyValue('font-size'));
+                if (type == 'increase') {
+                    elemento.style.fontSize = (size + 5) + "px";
+                } else {
+                    elemento.style.fontSize = (size - 5) + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
